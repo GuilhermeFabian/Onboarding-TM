@@ -15,6 +15,7 @@ fn main() {
   loop_example();
   loop_with_return();
   while_example();
+  for_index_example();
 }
 
 fn loop_example() {
@@ -69,4 +70,15 @@ fn while_example() {
   }
 
   println!("LIFEOFF!!!");
+}
+
+fn for_index_example() {
+  let list = [10, 20, 30, 40, 50];
+  let mut index = 0;
+
+  while index < 5 {
+    println!("The value is: {}.", list[index]);
+
+    index += 1;
+  }
 }

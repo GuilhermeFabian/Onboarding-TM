@@ -16,6 +16,7 @@ fn main() {
   loop_with_return();
   while_example();
   for_index_example();
+  for_each_example();
 }
 
 fn loop_example() {
@@ -80,5 +81,13 @@ fn for_index_example() {
     println!("The value is: {}.", list[index]);
 
     index += 1;
+  }
+}
+
+fn for_each_example() {
+  let list = [10, 20, 30, 40, 50];
+
+  for element in list {
+    println!("The value is: {}", element);
   }
 }

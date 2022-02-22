@@ -13,6 +13,7 @@ fn main() {
   }
 
   loop_example();
+  loop_with_return();
 }
 
 fn loop_example() {
@@ -41,4 +42,18 @@ fn loop_example() {
   }
 
   println!("End count {}", count);
+}
+
+fn loop_with_return() {
+  let mut counter = 0;
+
+  let result = loop {
+    counter += 1;
+
+    if counter == 10 {
+      break counter * 2;
+    }
+  };
+
+  println!("The result is: {}.", result);
 }

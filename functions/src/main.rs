@@ -1,9 +1,9 @@
 fn main() {
   println!("Hello, world!");
 
-  another_function(5);
+  another_function(5, 'h');
 }
 
-fn another_function(x: i32) {
-  println!("The value of x is: {}.", x);
+fn another_function(value: i32, unit_label: char) {
+  println!("The measurement is: {}{}.", value, unit_label);
 }

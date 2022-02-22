@@ -14,6 +14,7 @@ fn main() {
 
   loop_example();
   loop_with_return();
+  while_example();
 }
 
 fn loop_example() {
@@ -56,4 +57,16 @@ fn loop_with_return() {
   };
 
   println!("The result is: {}.", result);
+}
+
+fn while_example() {
+  let mut number = 3;
+
+  while number != 0 {
+    println!("{}!", number);
+
+    number -= 1;
+  }
+
+  println!("LIFEOFF!!!");
 }

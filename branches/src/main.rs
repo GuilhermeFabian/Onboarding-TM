@@ -17,6 +17,7 @@ fn main() {
   while_example();
   for_index_example();
   for_each_example();
+  for_each_with_generator();
 }
 
 fn loop_example() {
@@ -90,4 +91,11 @@ fn for_each_example() {
   for element in list {
     println!("The value is: {}", element);
   }
+}
+
+fn for_each_with_generator() {
+  for number in (1..4).rev() {
+    println!("{}!", number);
+  }
+  println!("LIFEOFF!!!");
 }

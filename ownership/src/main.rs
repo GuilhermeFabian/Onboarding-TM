@@ -16,6 +16,14 @@ fn main() {
   makes_copy(y);      // x would move into the function,
                                   // but i32 is Copy, so it's okay to still
                                   // use x afterward
+
+  let s3 = gives_ownership(); // gives_ownership moves its return
+  let s4 = String::from("Hello");
+  let s5 = takes_and_gives_back(s4); // s4 is moved into
+                                                    // takes_and_gives_back, which also
+                                                    // moves its return value into s5
+
+  println!("s3: {}, s5: {}", s3, s5);
 }
 
 fn takes_ownership(some_string: String) {
@@ -25,4 +33,13 @@ fn takes_ownership(some_string: String) {
 
 fn makes_copy(some_integer: i32) {
   println!("{}", some_integer);
+}
+
+fn gives_ownership() -> String {
+  let some_string = String::from("Yours");
+  some_string // some_string is returned and moves out to the calling function
+}
+
+fn takes_and_gives_back(a_string: String) -> String {
+  a_string  // a_string is returned and moves out to the calling function
 }

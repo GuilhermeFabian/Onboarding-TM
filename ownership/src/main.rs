@@ -24,6 +24,10 @@ fn main() {
                                                     // moves its return value into s5
 
   println!("s3: {}, s5: {}", s3, s5);
+
+  let (s6, length) = calculate_length(s5);
+
+  println!("s6: {}, length: {}", s6, length);
 }
 
 fn takes_ownership(some_string: String) {
@@ -42,4 +46,10 @@ fn gives_ownership() -> String {
 
 fn takes_and_gives_back(a_string: String) -> String {
   a_string  // a_string is returned and moves out to the calling function
+}
+
+fn calculate_length(s: String) -> (String, usize) {
+  let length = s.len();
+
+  (s, length)
 }

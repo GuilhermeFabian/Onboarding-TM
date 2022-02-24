@@ -1,3 +1,7 @@
+mod external_module;
+
+pub use crate::external_module::external_dependence;
+
 mod front_of_house {
   pub mod hosting {
     pub fn add_to_wailist() {}
@@ -49,6 +53,8 @@ pub fn eat_at_restaurant() {
 
   let order1 = back_of_house::Appetizer::Soup;
   let order2 = back_of_house::Appetizer::Salad;
+
+  external_dependence::some_method();
 
 
   // absolute path
